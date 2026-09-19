@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #0a0c14;
+  --color-surface: #141824;
+  --color-surface-2: #1c2233;
+  --color-fg: #e8e4d8;
+  --color-muted: #8a8490;
+  --color-primary: #f0a030;
+  --color-accent: #3ad0c0;
+  --color-danger: #c43c3c;
+  --color-hp: #e05050;
+  --color-sp: #50c8e0;
+  --color-border: #2a3148;
+  --color-shadow: #05060c;
+  --font-display: "Bungee", "Impact", sans-serif;
+  --font-sans: "IBM Plex Sans", system-ui, sans-serif;
+  --font-pixel: "Press Start 2P", ui-monospace, monospace;
+  --radius: 0.5rem;
+}
+
+@layer base {
+  html,
+  body,
+  #app {
+    min-height: 100%;
+    background: var(--color-bg);
+    color: var(--color-fg);
+  }
+
+  body {
+    font-family: var(--font-sans);
+    overflow: hidden;
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Controles aparecem por capacidade de toque, não pela largura da tela.
+   Isso mantém os botões fora do PC e funcionando em celulares no modo paisagem. */
+.touch-game-controls,
+.rotate-game-notice {
+  display: none;
+}
+
+@media (pointer: coarse) {
+  .touch-game-controls {
+    display: flex;
+  }
+}
+
+@media (pointer: coarse) and (orientation: portrait) and (max-width: 900px) {
+  .rotate-game-notice {
+    display: flex;
+  }
+  .touch-game-controls {
+    display: none;
+  }
+}
