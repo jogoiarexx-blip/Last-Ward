@@ -5,7 +5,6 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineConfig({
   // Caminhos relativos permitem publicar em qualquer repositório do GitHub Pages.
   base: "./",
-  resolve: { tsconfigPaths: true },
   plugins: [tailwindcss(), react()],
   build: {
     outDir: "dist",
