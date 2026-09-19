@@ -20,20 +20,22 @@ export const COMBO_WINDOW = 0.28;
 export const GRAB_RANGE = 22;
 export const THROW_SPEED = 280;
 
+// Quantos inimigos podem pressionar ativamente cada jogador.
+// Dificuldades altas ganham intensidade real, não apenas mais HP/dano.
 export const MAX_ATTACKERS = {
   easy: 1,
   normal: 2,
-  hard: 2,
-  arcade: 2,
-  nightmare: 3,
+  hard: 3,
+  arcade: 3,
+  nightmare: 4,
 } as const;
 
 export const DIFFICULTY_MOD = {
   easy: { hp: 0.72, dmg: 0.7, speed: 0.9, aggro: 0.7, loot: 1.4 },
   normal: { hp: 1, dmg: 1, speed: 1, aggro: 1, loot: 1 },
-  hard: { hp: 1.28, dmg: 1.22, speed: 1.08, aggro: 1.25, loot: 0.7 },
-  arcade: { hp: 1.1, dmg: 1.12, speed: 1.05, aggro: 1.15, loot: 0.85 },
-  nightmare: { hp: 1.55, dmg: 1.4, speed: 1.16, aggro: 1.55, loot: 0.4 },
+  hard: { hp: 1.24, dmg: 1.18, speed: 1.08, aggro: 1.22, loot: 0.72 },
+  arcade: { hp: 1.08, dmg: 1.1, speed: 1.06, aggro: 1.18, loot: 0.88 },
+  nightmare: { hp: 1.45, dmg: 1.32, speed: 1.15, aggro: 1.5, loot: 0.45 },
 } as const;
 
 export const SAVE_VERSION = 1;
